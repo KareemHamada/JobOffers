@@ -1,0 +1,17 @@
+E:\JobOffers\Bl\bin\Release\net6.0\Bl.deps.json
+E:\JobOffers\Bl\bin\Release\net6.0\Bl.runtimeconfig.json
+E:\JobOffers\Bl\bin\Release\net6.0\Bl.dll
+E:\JobOffers\Bl\bin\Release\net6.0\Bl.pdb
+E:\JobOffers\Bl\bin\Release\net6.0\Domains.dll
+E:\JobOffers\Bl\bin\Release\net6.0\Domains.pdb
+E:\JobOffers\Bl\obj\Release\net6.0\Bl.csproj.AssemblyReference.cache
+E:\JobOffers\Bl\obj\Release\net6.0\Bl.GeneratedMSBuildEditorConfig.editorconfig
+E:\JobOffers\Bl\obj\Release\net6.0\Bl.AssemblyInfoInputs.cache
+E:\JobOffers\Bl\obj\Release\net6.0\Bl.AssemblyInfo.cs
+E:\JobOffers\Bl\obj\Release\net6.0\Bl.csproj.CoreCompileInputs.cache
+E:\JobOffers\Bl\obj\Release\net6.0\Bl.csproj.CopyComplete
+E:\JobOffers\Bl\obj\Release\net6.0\Bl.dll
+E:\JobOffers\Bl\obj\Release\net6.0\refint\Bl.dll
+E:\JobOffers\Bl\obj\Release\net6.0\Bl.pdb
+E:\JobOffers\Bl\obj\Release\net6.0\Bl.genruntimeconfig.cache
+E:\JobOffers\Bl\obj\Release\net6.0\ref\Bl.dll
