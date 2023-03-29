@@ -1,0 +1,12 @@
+E:\JobOffers\Domains\bin\Release\net6.0\Domains.deps.json
+E:\JobOffers\Domains\bin\Release\net6.0\Domains.dll
+E:\JobOffers\Domains\bin\Release\net6.0\Domains.pdb
+E:\JobOffers\Domains\obj\Release\net6.0\Domains.csproj.AssemblyReference.cache
+E:\JobOffers\Domains\obj\Release\net6.0\Domains.GeneratedMSBuildEditorConfig.editorconfig
+E:\JobOffers\Domains\obj\Release\net6.0\Domains.AssemblyInfoInputs.cache
+E:\JobOffers\Domains\obj\Release\net6.0\Domains.AssemblyInfo.cs
+E:\JobOffers\Domains\obj\Release\net6.0\Domains.csproj.CoreCompileInputs.cache
+E:\JobOffers\Domains\obj\Release\net6.0\Domains.dll
+E:\JobOffers\Domains\obj\Release\net6.0\refint\Domains.dll
+E:\JobOffers\Domains\obj\Release\net6.0\Domains.pdb
+E:\JobOffers\Domains\obj\Release\net6.0\ref\Domains.dll

@@ -1,0 +1,387 @@
+﻿@model JobDetail
+
+
+@section Styles{
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/Admin/plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="~/Admin/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="~/Admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="~/Admin/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Admin/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="~/Admin/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="~/Admin/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="~/Admin/plugins/summernote/summernote-bs4.min.css">
+
+}
+
+
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>General Form</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">General Form</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title">Categories</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form method="post" asp-controller="JobDetails" asp-action="Save" enctype="multipart/form-data" role="form">
+                            <div class="card-body">
+                                <input type="hidden" asp-for="userId" />
+                                <input type="hidden" asp-for="CurrentState" />
+                                <input type="hidden" asp-for="JobDetailId" />
+                                <input type="hidden" asp-for="CompanyLogo" />
+                                <input type="hidden" asp-for="PostedDate" />
+
+                                <div class="form-group">
+                                        <label for="exampleInputEmail1">Category Name</label>
+                                    
+                                            <select asp-for="categoryId" asp-items="@(new SelectList(ViewBag.lstCategories,"CategoryId","CategoryName"))" class="custom-select" id="exampleInputEmail1"> </select>
+                                            <span class="text-danger" asp-validation-for="categoryId"></span>
+                                   
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Job Name</label>
+                                    <input asp-for="JobName" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Job Name">
+                                    <span  class="text-danger" asp-validation-for="JobName"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Company Name</label>
+                                    <input asp-for="CompanyName" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Company Name">
+                                    <span class="text-danger" asp-validation-for="CompanyName"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Company Details</label>
+                                    <input asp-for="CompanyDetails" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Company Details">
+                                    <span class="text-danger" asp-validation-for="CompanyDetails"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Company Address</label>
+                                    <input asp-for="CompanyAddress" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Company Address">
+                                    <span class="text-danger" asp-validation-for="CompanyAddress"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Company Logo</label>
+                                    <div class="input-group">
+                                        <div class="custom-file">
+                                            <input type="file" name="Files" class="custom-file-input" id="exampleInputFile" onchange="Upload.UploadDefaultImg(event)">
+                                            <label class="custom-file-label" for="exampleInputFile">Choose Company Logo</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                            <span class="input-group-text">Upload</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Company Website</label>
+                                    <input asp-for="CompanyWebsite" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Company Website">
+                                    <span class="text-danger" asp-validation-for="CompanyWebsite"></span>
+                                </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Company Email</label>
+                                        <input asp-for="EompanyEmail" type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter Company Website">
+                                        <span class="text-danger" asp-validation-for="EompanyEmail"></span>
+                                    </div>
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Minimum Salary</label>
+                                    <input asp-for="MinSalary" type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Minimum Salary">
+                                    <span class="text-danger" asp-validation-for="MinSalary"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Maximum Salary</label>
+                                    <input asp-for="MaxSalary" type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Maximum Salary">
+                                    <span class="text-danger" asp-validation-for="MaxSalary"></span>
+                                </div>
+
+
+                                    @* <div class="form-group">
+                                        <label for="exampleInputEmail1">Job Description</label>
+                                        <textarea asp-for="JobDescription" class="form-control" rows="3" placeholder="Enter Job Description" style="height: 54px;"></textarea>
+                                        <span class="text-danger" asp-validation-for="JobDescription"></span>
+                                    </div>
+*@
+                                    <div class="form-group">
+                                        <label>Job Description</label>
+                                        <textarea asp-for="JobDescription" type="date" class="form-control" id="JobDescription" placeholder="Enter Job Description">
+                                                </textarea>
+                                        <span class="text-danger" asp-validation-for="JobDescription"></span>
+                                    </div>
+
+
+                                    @*<div class="form-group">
+                                        <label for="exampleInputEmail1">Required Knowledge</label>
+                                        <textarea asp-for="RequiredKnowledge" class="form-control" rows="3" placeholder="Enter Required Knowledge" style="height: 54px;"></textarea>
+                                        <span class="text-danger" asp-validation-for="RequiredKnowledge"></span>
+                                    </div>*@
+
+                                    <div class="form-group">
+                                        <label>Required Knowledge</label>
+                                        <textarea asp-for="RequiredKnowledge" type="date" class="form-control" id="RequiredKnowledge" placeholder="Enter Required Knowledge">
+                                        </textarea>
+                                            <span class="text-danger" asp-validation-for="RequiredKnowledge"></span>
+                                    </div>
+
+
+                                     @*<div class="form-group">
+                                        <label for="exampleInputEmail1">Education</label>
+                                        <textarea asp-for="Education" class="form-control" rows="3" placeholder="Enter Education" style="height: 54px;"></textarea>
+                                        <span class="text-danger" asp-validation-for="Education"></span>
+                                    </div>*@
+
+                                    <div class="form-group">
+                                        <label>Education</label>
+                                        <textarea asp-for="Education" type="date" class="form-control" id="Education" placeholder="Enter Education">
+                                            </textarea>
+                                        <span class="text-danger" asp-validation-for="Education"></span>
+                                    </div>
+
+
+
+                                    @*<div class="form-group">
+                                        <label for="exampleInputEmail1">Posted Date</label>
+                                        <input asp-for="PostedDate" type="date" class="form-control" id="exampleInputEmail1" placeholder="Enter Posted Date">
+                                        <span class="text-danger" asp-validation-for="PostedDate"></span>
+                                    </div>*@
+
+
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Location</label>
+
+                                        <select asp-for="JobLocationId" asp-items="@(new SelectList(ViewBag.lstLocations,"JobLocationId","JobLocationName"))" class="custom-select" id="exampleInputEmail1"> </select>
+                                        <span class="text-danger" asp-validation-for="JobLocationId"></span>
+
+                                    </div>
+
+@*                                    
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Location</label>
+                                        <input asp-for="Location" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Location">
+                                        <span class="text-danger" asp-validation-for="Location"></span>
+                                    </div>
+*@
+                                    
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Vacancy</label>
+                                        <input asp-for="Vacancy" type="number" class="form-control" id="exampleInputEmail1" placeholder="Enter Vacancy">
+                                        <span class="text-danger" asp-validation-for="Vacancy"></span>
+                                    </div>
+
+
+
+
+
+
+                                    @{
+                                var selectList = new SelectList(
+                                    new List<SelectListItem>
+                                    {
+                                new SelectListItem {Text = "Full time", Value = "Full time"},
+                        new SelectListItem {Text = "Part time", Value = "Part time"},
+                                    }, "Value", "Text");
+                            }
+
+@*                                 <div class="form-group">
+                                        <label for="exampleInputEmail1">Job Nature</label>
+
+                                    <select asp-for="JobNature" asp-items="@selectList" class="custom-select" id="exampleInputEmail1"> </select>
+                                    <span class="text-danger" asp-validation-for="JobNature"></span>
+                                   
+                                </div>*@
+
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Location</label>
+
+                                    <select asp-for="JobTypeId" asp-items="@(new SelectList(ViewBag.lstJobTyes,"JobTypeId","JobTypeName"))" class="custom-select" id="exampleInputEmail1"> </select>
+                                    <span class="text-danger" asp-validation-for="JobTypeId"></span>
+
+                                </div>
+
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Application Date</label>
+                                    <input asp-for="ApplicationDate" type="date" class="form-control" id="exampleInputEmail1" placeholder="Enter Application Date ">
+                                    <span class="text-danger" asp-validation-for="ApplicationDate"></span>
+                                </div>
+
+
+                                
+
+                            </div>
+                            <!-- /.card-body -->
+
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-primary">
+                        <div class="card-body">
+                            <span id="tbImgName"></span>
+                            <div id="tbImgSrc">
+                                <img src="/Uploads/Companies/@Model.CompanyLogo" style="width:95%; height:300px;" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /.row -->
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+@section Scripts{
+
+@*    ///
+
+    <!-- jQuery -->
+    <script src="~/Admin/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Admin/dist/js/adminlte.min.js"></script>
+    <!-- Summernote -->
+    <script src="~/Admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- CodeMirror -->
+    <script src="~/Admin/plugins/codemirror/codemirror.js"></script>
+    <script src="~/Admin/plugins/codemirror/mode/css/css.js"></script>
+    <script src="~/Admin/plugins/codemirror/mode/xml/xml.js"></script>
+    <script src="~/Admin/plugins/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="~/Admin/dist/js/demo.js"></script>
+    <!-- Page specific script -->
+    <script>
+        $(function () {
+            // Summernote
+            $('#summernote').summernote()
+
+            // CodeMirror
+            CodeMirror.fromTextArea(document.getElementById("codeMirrorDemo"), {
+                mode: "htmlmixed",
+                theme: "monokai"
+            });
+        })
+    </script>
+    ///
+*@
+
+
+    <!-- jQuery -->
+    <script src="~/Admin/plugins/jquery/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/Admin/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button)
+    </script>
+    <!-- Bootstrap 4 -->
+    <script src="~/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- ChartJS -->
+    <script src="~/Admin/plugins/chart.js/Chart.min.js"></script>
+    <!-- Sparkline -->
+    <script src="~/Admin/plugins/sparklines/sparkline.js"></script>
+    <!-- JQVMap -->
+    <script src="~/Admin/plugins/jqvmap/jquery.vmap.min.js"></script>
+    <script src="~/Admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="~/Admin/plugins/jquery-knob/jquery.knob.min.js"></script>
+    <!-- daterangepicker -->
+    <script src="~/Admin/plugins/moment/moment.min.js"></script>
+    <script src="~/Admin/plugins/daterangepicker/daterangepicker.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="~/Admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+    <!-- Summernote -->
+    <script src="~/Admin/plugins/summernote/summernote-bs4.min.js"></script>
+    <!-- overlayScrollbars -->
+    <script src="~/Admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Admin/dist/js/adminlte.js"></script>
+@*    <!-- AdminLTE for demo purposes -->
+    <script src="~/Admin/dist/js/demo.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="~/Admin/dist/js/pages/dashboard.js"></script>*@
+
+    ///////////////////////////////////////////////////////////
+
+    <!-- bs-custom-file-input -->
+    <script src="~/Admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Admin/dist/js/adminlte.min.js"></script>
+
+    <script>
+        $(function () {
+            bsCustomFileInput.init();
+        });
+    </script>
+
+        // script to add image
+    <script>
+        var Upload = {
+            UploadDefaultImg: function (e) {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    CourseMediaImgName = file.name;
+                    CourseMediaImgBase64 = reader.result.slice(reader.result.indexOf('base64,') + 7);
+                    $("#tbImgName").html(file.name)
+                    $("#tbImgSrc").html(`<img class="thumbnail" src = "${reader.result}"  style = "width: 200px;height: 300px;border-radius: 5px;border: 1px solid #d9d9d9;padding: 1px;" />`)
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+    <script src="~/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace("JobDescription");
+        CKEDITOR.replace("RequiredKnowledge");
+        CKEDITOR.replace("Education");
+    </script>
+}
+

@@ -1,0 +1,125 @@
+﻿@model Category
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>General Form</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">General Form</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+              <div class="col-md-8">
+                <!-- general form elements -->
+                     <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">Categories</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                        <form asp-area="admin" asp-controller="Categories" asp-action="Save" method="post" enctype="multipart/form-data" role="form">
+                    <div class="card-body">
+                                <input type="hidden" asp-for="CategoryId" />
+                                <input type="hidden" asp-for="CurrentState" />
+                                <input type="hidden" asp-for="ImageName" />
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Category Name</label>
+                                    <input asp-for="CategoryName" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Category Name">
+                                    <span asp-validation-for="CategoryName" class="text-danger"></span>
+                      </div>
+                      <div class="form-group">
+                                    <label for="exampleInputPassword1">Category Description</label>
+                                    <input asp-for="CategoryDescription" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Category Description">
+                                    <span asp-validation-for="CategoryDescription" class="text-danger"></span>
+                      </div>
+                    <div class="form-group">
+                        <label for="exampleInputFile">Image</label>
+                        <div class="input-group">
+                            <div class="custom-file">
+                                            <input type="file" name="Files" class="custom-file-input" id="exampleInputFile" onchange="Upload.UploadDefaultImg(event)">
+                                <label class="custom-file-label" for="exampleInputFile">Choose Image</label>
+                            </div>
+                            <div class="input-group-append">
+                                <span class="input-group-text">Upload</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.card -->  
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-primary">
+                        <div class="card-body">
+                            <span id="tbImgName"></span>
+                            <div id="tbImgSrc">
+                                <img src="/Uploads/Categories/@Model.ImageName" style="width:95%; height:300px;" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+          
+        </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+ 
+
+
+@section Scripts{
+    <!-- bs-custom-file-input -->
+    <script src="~/Admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/Admin/dist/js/adminlte.min.js"></script>
+
+    <script>
+    $(function () {
+      bsCustomFileInput.init();
+    });
+    </script>
+
+    // script to add image
+    <script>
+        var Upload = {
+            UploadDefaultImg: function (e) {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    CourseMediaImgName = file.name;
+                    CourseMediaImgBase64 = reader.result.slice(reader.result.indexOf('base64,') + 7);
+                    $("#tbImgName").html(file.name)
+                    $("#tbImgSrc").html(`<img class="thumbnail" src = "${reader.result}"  style = "width: 200px;height: 300px;border-radius: 5px;border: 1px solid #d9d9d9;padding: 1px;" />`)
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+
+}
+

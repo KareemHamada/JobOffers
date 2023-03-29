@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA29MDwzzIVEmzji3qY+nXHAAAAAACAAAAAAAQZgAAAAEAACAAAAD+k7ZdpTYR5EvmDdjLuBbMcAOHOdkzr5NCiBJl9BXHuwAAAAAOgAAAAAIAACAAAABCdwJydHAVZLITwy2A23x9eLYXeDJpYBzp/MBaucyZNiAAAADKRnelg1MJUi2wyCLKhGuyxHzuWiAAP/yjN78L3ZGyokAAAADkiUPWPDeMQDUnQnOM5947b/FrXUYZOejq7g4PtH8eyAr0k+QEDWFU0h3Wl3ORbbU82KOvdshGRPbuteOJctN0</EncryptedPassword>
+    <History>False|2023-03-27T19:07:56.4815898Z;False|2023-03-27T03:16:18.3937912+02:00;False|2023-03-27T01:12:44.6488671+02:00;False|2023-03-27T00:41:24.4967107+02:00;</History>
+    <LastFailureDetails />
+    <_PublishTargetUrl>ftp://JobOffers.backup.somee.com/JobOffers_MSSql_Database_Backup</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="appsettings.Development.json">
+      <publishTime>03/14/2023 17:44:13</publishTime>
+    </File>
+    <File Include="appsettings.json">
+      <publishTime>03/27/2023 20:36:06</publishTime>
+    </File>
+    <File Include="Azure.Core.dll">
+      <publishTime>04/04/2022 23:38:56</publishTime>
+    </File>
+    <File Include="Azure.Identity.dll">
+      <publishTime>04/05/2022 22:26:00</publishTime>
+    </File>
+    <File Include="Bl.dll">
+      <publishTime>03/27/2023 01:28:37</publishTime>
+    </File>
+    <File Include="Bl.pdb">
+      <publishTime>03/27/2023 01:28:37</publishTime>
+    </File>
+    <File Include="Domains.dll">
+      <publishTime>03/27/2023 01:28:22</publishTime>
+    </File>
+    <File Include="Domains.pdb">
+      <publishTime>03/27/2023 01:28:22</publishTime>
+    </File>
+    <File Include="dotnet-aspnet-codegenerator-design.dll">
+      <publishTime>03/06/2023 03:14:34</publishTime>
+    </File>
+    <File Include="FluentAssertions.dll">
+      <publishTime>02/11/2023 18:09:10</publishTime>
+    </File>
+    <File Include="Humanizer.dll">
+      <publishTime>01/29/2022 17:04:04</publishTime>
+    </File>
+    <File Include="JobOffers.deps.json">
+      <publishTime>03/27/2023 20:37:48</publishTime>
+    </File>
+    <File Include="JobOffers.exe">
+      <publishTime>03/27/2023 20:37:33</publishTime>
+    </File>
+    <File Include="JobOffers.pdb">
+      <publishTime>03/26/2023 23:33:39</publishTime>
+    </File>
+    <File Include="JobOffers.runtimeconfig.json">
+      <publishTime>03/26/2023 23:33:59</publishTime>
+    </File>
+    <File Include="MessagePack.Annotations.dll">
+      <publishTime>07/01/2020 15:05:20</publishTime>
+    </File>
+    <File Include="MessagePack.dll">
+      <publishTime>07/01/2020 15:05:38</publishTime>
+    </File>
+    <File Include="Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>11/25/2019 12:57:50</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Cryptography.Internal.dll">
+      <publishTime>07/14/2022 03:10:18</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Cryptography.KeyDerivation.dll">
+      <publishTime>07/14/2022 03:10:44</publishTime>
+    </File>
+    <File Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll">
+      <publishTime>07/14/2022 03:12:18</publishTime>
+    </File>
+    <File Include="Microsoft.Bcl.AsyncInterfaces.dll">
+      <publishTime>10/19/2020 20:47:56</publishTime>
+    </File>
+    <File Include="Microsoft.Build.Framework.dll">
+      <publishTime>09/13/2022 01:28:56</publishTime>
+    </File>
+    <File Include="Microsoft.CodeAnalysis.AnalyzerUtilities.dll">
+      <publishTime>06/06/2020 05:37:20</publishTime>
+    </File>
+  </ItemGroup>
+</Project>
